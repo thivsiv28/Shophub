@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS shophub_db;
+CREATE DATABASE shophub_db;
