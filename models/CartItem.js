@@ -14,13 +14,21 @@ CartItem.init (
         product_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true,
+            // foreignKey: true,
+            references: { 
+                model: 'Product', 
+                key: 'id',
+            },
 
         },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true,
+            // foreignKey: true,
+            references: { 
+                model: 'User', 
+                key: 'id',
+            },
         },
     }
 );

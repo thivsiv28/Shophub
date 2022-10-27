@@ -32,7 +32,10 @@ Product.init (
         department_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true,
+            references: { 
+                model: 'department', 
+                key: 'id',
+            }
         },
     }
 );

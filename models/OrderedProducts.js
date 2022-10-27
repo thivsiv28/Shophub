@@ -14,13 +14,21 @@ OrderedProducts.init (
         product_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true,
+            // foreignKey: true,
+            references: { 
+                model: 'Product', 
+                key: 'id',
+            },
 
         },
         order_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true,
+            // foreignKey: true,
+            references: { 
+                model: 'Order', 
+                key: 'id',
+            },
         },
     }
 );
