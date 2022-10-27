@@ -6,12 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-<<<<<<< HEAD
-    "seed": "node seeds/seed.js",
-    "watch": "nodemon server.js"
-=======
     "seed": "node seeds/index.js"
->>>>>>> 93ca32ae77633c5d62b09113ee96327133af6c36
   },
   "keywords": [],
   "author": "",
@@ -24,13 +19,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "nodemon": "^2.0.20",
     "sequelize": "^6.3.5"
-<<<<<<< HEAD
-=======
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
->>>>>>> 93ca32ae77633c5d62b09113ee96327133af6c36
   }
 }
