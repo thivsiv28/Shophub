@@ -6,10 +6,6 @@ const OrderedProducts = require ('./OrderedProducts');
 const CartItem = require('./CartItem');
 const Order = require('./Order');
 
-Order.hasMany(CartItem, {
-    foreignKey: 'cart_id',
-    onDelete: 'CASCADE',
- });
 
  Product.belongsTo(User, {
 
