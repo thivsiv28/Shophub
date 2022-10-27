@@ -1,0 +1,30 @@
+<main class="cart-page">
+
+    <header class="header" id="cart-page-header">
+        <h1 class="welcome-message">Welcome to ShopHub</h1>
+        <nav class="navbar" id="cart-navbar">
+            <button id="logout-button">Logout</button>
+            <a class="previous" href="/api/departments">Departments</a>
+        </nav>
+    </header>
+
+    <section class="cart-items">
+        <h1 class="cart-message">Your Cart</h1>
+        <div class="cart-display">
+            {{#each cartItems as |cartItem|}}
+            <div class="card">
+                <img class="product-image" src="{{image}}" alt="image of {{name}}">
+                <div class="product-info">
+                    <h2 class="product-name">{{name}}</h2>
+                    <p class="product-description">{{description}}</p>
+                    <p class="product-price">{{price}}</p>
+                </div>
+                <button class="delete-from-cart" data-productId="{{id}}">Remove from Cart</button>
+            </div>
+            {{/each}}
+
+        </div>
+        <button id="submit-order-button">Submit Your Order</button>
+    </section>
+
+</main>
