@@ -9,6 +9,7 @@ Department.init (
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
+            autoIncrement: true,
 
         },
         department_name: {
