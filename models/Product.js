@@ -27,7 +27,7 @@ Product.init (
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         department_id: {
             type: DataTypes.INTEGER,
