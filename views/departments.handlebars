@@ -1,21 +1,26 @@
 <main class="departments-page">
 
-    <header class="header" id="departments-page-header">
-        <h1 class="welcome-message">Welcome to ShopHub</h1>
-        <nav class="navbar" id="departments-navbar">
-            <button id="logout-button">Logout</button>
-            <a href="/api/cart/" id="cart-link">Cart</a>
-        </nav>
-    </header>
+  <header class="header" id="departments-page-header">
+    <h1 class="welcome-message">Welcome to ShopHub</h1>
+    <nav class="navbar" id="departments-navbar">
+      <button id="logout-button">Logout</button>
+      <a href="/api/cart/" id="cart-link">Cart</a>
+    </nav>
+  </header>
 
-    <section class="departments">
-        <h1 class="departments-message">Shop by departments</h1>
-        <div class="departments-display">
-            {{#each departments as |department|}}
-            <a class="department-link" href="/api/products/{{id}}">{{department_name}}</a>
-            {{/each}}
+  <section class="departments">
+    <h1 class="departments-message">Shop by departments</h1>
+    <div class="departments-display">
+      {{#each departments as |department|}}
+        <a
+          class="department-link"
+          href="/api/products/{{id}}"
+        >{{department_name}}</a>
+      {{/each}}
 
-        </div>
-    </section>
+    </div>
+  </section>
 
 </main>
+
+{{! <script src="/js/departments.js"></script> }}
