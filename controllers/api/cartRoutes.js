@@ -4,20 +4,25 @@ const { Model } = require("sequelize");
 const { CartItem } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/api/cart/:id", withAuth, async (req, res) => {
-  const newCart = await CartItem.create({
-    ...req.body,
-    user_id: req.session.userId,
-  });
+router.post("/api/cart", withAuth, async (req, res) => {
+  try {
+    const newCart = await CartItem.create({
+      ...req.body,
+      user_id: req.session.userId,
+    });
 
-  res.status(200).json(newCart);
+    res.status(200).json(newCart);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/api/cart", withAuth, async (req, res) => {
   try {
     const dbCartItems = await CartItem.findAll({
       where: {
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
       include: [
         {
@@ -29,6 +34,7 @@ router.get("/api/cart", withAuth, async (req, res) => {
     const cartItems = dbCartItems.get({ plain: true });
     res.render("cart", {
       cartItems,
+      loggedInUser: req.session.userId,
     });
   } catch (err) {
     console.log(err);
