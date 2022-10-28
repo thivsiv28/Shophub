@@ -7,8 +7,8 @@ const withAuth = require('../../utils/auth');
 
 router.get('/api/departments', withAuth, async (req, res) =>{
     try {
-        const enterDepartment = await Department.findAll();
-        const departments = enterDepartment.get
+        const dbDepartments = await Department.findAll();
+        const departments = dbDepartments.get
         ({plain:true})
     res.render ('department', {
         departments,
