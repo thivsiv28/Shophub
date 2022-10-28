@@ -9,10 +9,16 @@ router.get("/:id", withAuth, async (req, res) => {
       where: { department_id: req.params.id },
     });
 
-    if (dbProducts) {
+    const dbDepartment = await Department.findByPk({
+      where: { id: req.params.id },
+    });
+
+    if (dbProducts && dbDepartment) {
       const products = dbProducts.get({ plain: true });
+      const department = dbDepartment.get({ plain: true });
       res.render("products", {
         products,
+        department,
         loggedInUser: res.session.userId,
       });
     } else {
