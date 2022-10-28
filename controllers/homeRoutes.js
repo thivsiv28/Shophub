@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       return;
     }
 
-    res.render('frontpage');
+    res.render('login');
   } catch (err) {
     res.status(500).json(err);
   }
