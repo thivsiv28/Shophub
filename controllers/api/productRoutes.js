@@ -1,19 +1,27 @@
-const router = require('express').Router();
-const { Product } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Product, Department } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.get('/api/products/:id', withAuth, async (req, res) => {
+// api/products/:id
+router.get("/:id", withAuth, async (req, res) => {
   try {
-    const newProject = await Product.findAll({
-        where: req.params.id,
+    const dbProducts = await Product.findAll({
+      where: { department_id: req.params.id },
     });
 
-    res.status(200).json(newProduct);
+    if (dbProducts) {
+      const products = dbProducts.get({ plain: true });
+      res.render("products", {
+        products,
+        loggedInUser: res.session.userId,
+      });
+    } else {
+      res.status(404).json({ message: "No product found with this id!" });
+      return;
+    }
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
