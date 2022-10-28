@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { restart } = require("nodemon");
 const { Model } = require("sequelize");
-const { Department, Product } = require("../../models");
+const { Department } = require("../../models");
 const withAuth = require("../../utils/auth");
 const { route } = require("./productRoutes");
 

@@ -26,7 +26,7 @@ router.get("/api/cart", withAuth, async (req, res) => {
       },
       include: [
         {
-          Model: Product,
+          model: Product,
           attributes: ["name", "image", "description", "price"],
         },
       ],

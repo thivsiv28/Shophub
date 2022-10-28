@@ -12,7 +12,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     if (req.session.loggedIn) {
-      res.redirect("/departments");
+      res.redirect("/api/departments");
       return;
     }
 
