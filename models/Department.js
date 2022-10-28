@@ -17,6 +17,13 @@ Department.init (
             allowNull: false,
         },
      
+    },
+    {
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'department',
     }
 );
 
