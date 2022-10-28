@@ -14,9 +14,13 @@
     <div class="products-display">
       {{#each products as |product|}}
         <div class="card">
-          <img class="product-image" src="{{image}}" alt="image of {{name}}" />
+          <img
+            class="product-image"
+            src="{{image}}"
+            alt="image of {{product_name}}"
+          />
           <div class="product-info">
-            <h2 class="product-name">{{name}}</h2>
+            <h2 class="product-name">{{product_name}}</h2>
             <p class="product-description">{{description}}</p>
             <p class="product-price">{{price}}</p>
           </div>
