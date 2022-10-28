@@ -31,7 +31,7 @@ router.post('/api/cart/:id', withAuth, async (req, res) => {
 
     router.delete('/:id', withAuth, async (req, res) => {
         try {
-          const projectData = await Project.destroy({
+          const cartData = await CartItem.destroy({
             where: {
               id: req.params.id,
             },
