@@ -1,10 +1,8 @@
 const router = require("express").Router();
-const { restart } = require("nodemon");
-const { Model } = require("sequelize");
-const { CartItem } = require("../../models");
+const { CartItem, Product } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/api/cart", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newCart = await CartItem.create({
       ...req.body,
@@ -18,7 +16,7 @@ router.post("/api/cart", withAuth, async (req, res) => {
   }
 });
 
-router.get("/api/cart", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbCartItems = await CartItem.findAll({
       where: {
@@ -27,11 +25,13 @@ router.get("/api/cart", withAuth, async (req, res) => {
       include: [
         {
           model: Product,
-          attributes: ["name", "image", "description", "price"],
+          attributes: ["product_name", "image", "description", "price"],
         },
       ],
     });
-    const cartItems = dbCartItems.get({ plain: true });
+    const cartItems = dbCartItems.map((cartItem) => {
+      return cartItem.get({ plain: true });
+    });
     res.render("cart", {
       cartItems,
       loggedInUser: req.session.userId,
@@ -42,7 +42,7 @@ router.get("/api/cart", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const cartData = await CartItem.destroy({
       where: {

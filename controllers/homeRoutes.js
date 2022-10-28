@@ -10,16 +10,20 @@ const {
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  try {
-    if (req.session.loggedIn) {
-      res.redirect("/api/departments");
-      return;
-    }
-
-    res.render("login");
-  } catch (err) {
-    res.status(500).json(err);
+  if (req.session.loggedIn) {
+    res.redirect("/api/departments");
+    return;
   }
+  res.render("login");
 });
+
+// router.get("/", async (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/departments");
+//     return;
+//   }
+
+//   res.render("login");
+// });
 
 module.exports = router;
