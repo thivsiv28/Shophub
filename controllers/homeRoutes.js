@@ -10,6 +10,12 @@ const {
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
+  //delete 13-19
+  req.session.save(() => {
+    req.session.userId = 1;
+    req.session.loggedIn = true;
+  });
+
   if (req.session.loggedIn) {
     res.redirect("/api/departments");
     return;
