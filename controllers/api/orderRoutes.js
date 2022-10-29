@@ -31,7 +31,7 @@ const submitOrder = async ({ userId }) => {
     };
   });
 
-  await OrderedProducts.bulkCreate(orderedProducts, { individuaHooks: true });
+  await OrderedProducts.bulkCreate(orderedProducts, { individualHooks: true });
 
   await CartItem.destroy({
     where: {
