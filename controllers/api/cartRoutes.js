@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { CartItem, Product } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newCart = await CartItem.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const dbCartItems = await CartItem.findAll({
       where: {
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const cartData = await CartItem.destroy({
       where: {

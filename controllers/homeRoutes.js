@@ -17,13 +17,4 @@ router.get("/", async (req, res) => {
   res.render("login");
 });
 
-// router.get("/", async (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect("/departments");
-//     return;
-//   }
-
-//   res.render("login");
-// });
-
 module.exports = router;
