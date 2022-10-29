@@ -1,10 +1,7 @@
-// Insert a add to cart handler
-
 const addToCart = async (event) => {
   if (event.target.hasAttribute("data-productId")) {
     const productId = event.target.getAttribute("data-productId");
 
-    alert("I am clicked");
     const response = await fetch("/api/cart", {
       method: "POST",
       body: JSON.stringify({ product_id: productId }),
