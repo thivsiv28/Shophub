@@ -1,0 +1,32 @@
+.products-page {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#departments-link {
+  padding-bottom: 0;
+  border-bottom: none;
+  transition: all 0.2s;
+}
+
+#departments-link:hover {
+  border-bottom: 2px solid var(--color-text-primary);
+  padding-bottom: 1rem;
+}
+
+.products {
+  padding: 6rem 0;
+  border-bottom: 3px solid var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 6rem;
+}
+
+.products h1 {
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-medium);
+  color: var(--color-text-primary);
+}

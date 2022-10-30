@@ -1,24 +1,101 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root {
+  --color-text-primary: #3b3b3b;
+
+  --font-style-primary: "Source Sans Pro", sans-serif;
+  --font-style-secondary: "Old Standard TT", serif;
+
+  --font-size-large: 6rem;
+  --font-size-medium: 3rem;
+  --font-size-small: 1.6rem;
 }
 
-.no-button {
+.header {
+  padding: 0 7rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 3px solid var(--color-text-primary);
+}
+
+.header h1 {
+  font-family: var(--font-style-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-large);
+}
+
+.header .navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 4rem;
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-medium);
+  color: var(--color-text-primary);
+  font-weight: bold;
+}
+
+#cart-link {
+  padding-bottom: 0;
+  border-bottom: none;
+  transition: all 0.2s;
+}
+
+#cart-link:hover {
+  border-bottom: 2px solid var(--color-text-primary);
+  padding-bottom: 1rem;
+}
+
+#logout-button {
+  padding-bottom: 0;
   background: none;
   border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
+  border-bottom: none;
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-medium);
+  color: rgb(206, 19, 19);
   font-weight: bold;
-  margin-left: -5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#logout-button:hover {
+  border-bottom: 2px solid rgb(206, 19, 19);
+  padding-bottom: 1rem;
+}
+
+.footer {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h2 {
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-medium);
+  color: #3b3b3b;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  font-family: var(--font-style-primary);
+  font-size: var(--font-size-small);
+  color: var(--color-text-primary);
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 2rem;
 }
