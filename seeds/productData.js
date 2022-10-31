@@ -5,7 +5,7 @@ const productdata = [
     product_name: "Beef",
     description: "Fresh beef",
     price: 20,
-    image: "/images/fresh beef",
+    image: "fresh_beef.jpeg",
     department_id: 1,
   },
   {
