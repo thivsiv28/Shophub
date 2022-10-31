@@ -9,12 +9,12 @@ const seedOrderedProducts = require("./orderedProductsData");
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUser();
+  // await seedUser();
   await seedDedepartment();
   await seedProduct();
-  await seedCart();
-  await seedOrder();
-  await seedOrderedProducts();
+  // await seedCart();
+  // await seedOrder();
+  // await seedOrderedProducts();
 
   process.exit(0);
 };

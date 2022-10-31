@@ -1,10 +1,13 @@
 <main class="cart-page">
 
   <header class="header" id="cart-page-header">
-    <h1 class="welcome-message">Welcome to ShopHub</h1>
+    {{! <h1 class="welcome-message">ShopHub</h1> }}
+    <div class="logo-container">
+      <img class="logo" src="/images/Color logo.png" alt="Logo" />
+    </div>
     <nav class="navbar" id="cart-navbar">
+      <a href="/api/departments" id="departments-link">Departments</a>
       <button id="logout-button">Logout</button>
-      <a class="previous" href="/api/departments">Departments</a>
     </nav>
   </header>
 
@@ -12,25 +15,37 @@
     <h1 class="cart-message">Your Cart</h1>
     <div class="cart-display">
       {{#each cartItems as |cartItem|}}
-        <div class="card">
+        <div class="card" id="cart-card">
           <img
             class="product-image"
-            src="{{product.image}}"
+            src="/images/{{product.image}}"
             alt="image of {{product.product_name}}"
           />
           <div class="product-info">
             <h2 class="product-name">{{product.product_name}}</h2>
             <p class="product-description">{{product.description}}</p>
-            <p class="product-price">{{product.price}}</p>
+            <p class="product-price">${{product.price}}</p>
           </div>
-          <button class="delete-from-cart" data-cartItemId="{{id}}">Remove from
-            Cart</button>
+          <button id="delete-from-cart" data-cartItemId="{{id}}">Remove</button>
         </div>
       {{/each}}
 
     </div>
     <button id="submit-order-button">Submit Your Order</button>
   </section>
+
+  <footer class="footer">
+    <div class="footer-contacts">
+      <h2>Get in touch with us</h2>
+      <a href="mailto:shophub@shophub.com">shophub@shophub.com</a>
+      <p>800-111-2323</p>
+      <p>Unit 3 - 666 Shophub Ave, Toronto, ON</p>
+    </div>
+    {{! <div class="footer-socials">
+      <p>Github Logo Goes here</p>
+      <p>Twitter Logo Goes here</p>
+    </div> }}
+  </footer>
 
 </main>
 

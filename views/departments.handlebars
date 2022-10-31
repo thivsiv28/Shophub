@@ -1,25 +1,49 @@
 <main class="departments-page">
 
   <header class="header" id="departments-page-header">
-    <h1 class="welcome-message">Welcome to ShopHub</h1>
+    {{! <h1 class="welcome-message">ShopHub</h1> }}
+    <div class="logo-container">
+      <img class="logo" src="/images/Color logo.png" alt="Logo" />
+    </div>
     <nav class="navbar" id="departments-navbar">
-      <button id="logout-button">Logout</button>
       <a href="/api/cart/" id="cart-link">Cart</a>
+      <button id="logout-button">Logout</button>
     </nav>
   </header>
 
   <section class="departments">
-    <h1 class="departments-message">Shop by departments</h1>
+    <h1 class="departments-message">Shop By Departments</h1>
     <div class="departments-display">
       {{#each departments as |department|}}
-        <a
-          class="department-link"
-          href="/api/products/{{id}}"
-        >{{department_name}}</a>
+        <div class="department-row">
+          <h1 class="department-name">{{department_name}}</h1>
+          <div class="department-image">
+            <img src="/images/{{department_image}}" alt="department image" />
+            <div class="department-image-hover">
+              <a
+                class="department-link"
+                href="/api/products/{{id}}"
+              >{{department_name}}</a>
+            </div>
+          </div>
+        </div>
       {{/each}}
 
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer-contacts">
+      <h2>Get in touch with us</h2>
+      <a href="mailto:shophub@shophub.com">shophub@shophub.com</a>
+      <p>800-111-2323</p>
+      <p>Unit 3 - 666 Shophub Ave, Toronto, ON</p>
+    </div>
+    {{! <div class="footer-socials">
+      <p>Github Logo Goes here</p>
+      <p>Twitter Logo Goes here</p>
+    </div> }}
+  </footer>
 
 </main>
 
