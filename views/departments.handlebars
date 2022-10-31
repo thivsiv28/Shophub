@@ -1,7 +1,10 @@
 <main class="departments-page">
 
   <header class="header" id="departments-page-header">
-    <h1 class="welcome-message">ShopHub</h1>
+    {{! <h1 class="welcome-message">ShopHub</h1> }}
+    <div class="logo-container">
+      <img class="logo" src="/images/Color logo.png" alt="Logo" />
+    </div>
     <nav class="navbar" id="departments-navbar">
       <a href="/api/cart/" id="cart-link">Cart</a>
       <button id="logout-button">Logout</button>
@@ -15,9 +18,7 @@
         <div class="department-row">
           <h1 class="department-name">{{department_name}}</h1>
           <div class="department-image">
-            <img
-              src="https://midwestcommunity.org/wp-content/uploads/2018/02/Groceries-ThinkstockPhotos-836782690.jpg"
-            />
+            <img src="/images/{{department_image}}" alt="department image" />
             <div class="department-image-hover">
               <a
                 class="department-link"
