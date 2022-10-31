@@ -16,15 +16,18 @@
         <div class="card">
           <img
             class="product-image"
-            src="{{image}}"
+            src="https://styles.redditmedia.com/t5_2qs68/styles/communityIcon_q8mi7wapykd51.jpg?width=256&s=854237e848eddbb31c24c6c0f530605e2f332451"
             alt="image of {{product_name}}"
           />
           <div class="product-info">
             <h2 class="product-name">{{product_name}}</h2>
             <p class="product-description">{{description}}</p>
-            <p class="product-price">{{price}}</p>
+            <p class="product-price">${{price}}</p>
           </div>
-          <button class="add-to-cart" data-productId="{{id}}">Add to Cart</button>
+          <div class="button-container">
+            <button id="add-to-cart" data-productId="{{id}}">Add to Cart</button>
+            <p class="added-message" data-messageId="{{id}}">Added to cart</p>
+          </div>
         </div>
       {{/each}}
 

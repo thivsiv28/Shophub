@@ -14,8 +14,133 @@
   row-gap: 6rem;
 }
 
-.departments h1 {
+.departments .departments-message {
   font-family: var(--font-style-secondary);
   font-size: var(--font-size-medium);
   color: var(--color-text-primary);
+}
+
+.departments-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.department-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.department-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.department-name {
+  width: 50%;
+  display: block;
+  text-align: center;
+
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+}
+
+.department-image {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.department-image img {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+
+.department-image .department-image-hover {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.department-image:hover .department-image-hover {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+
+.department-image .department-image-hover a {
+  font-family: var(--font-style-secondary);
+  font-size: var(--font-size-large);
+  color: aliceblue;
+  border-bottom: none;
+  padding-bottom: 1rem;
+  transition: all 0.3s linear;
+}
+
+.department-image .department-image-hover a:hover {
+  border-bottom: 1px solid aliceblue;
+  padding-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 590px) {
+  .departments-display {
+    width: 80%;
+  }
+
+  .department-name {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .departments {
+    padding: 4rem 0;
+  }
+
+  .departments-display {
+    width: 80%;
+    row-gap: 3rem;
+  }
+
+  .department-row {
+    flex-direction: column;
+    row-gap: 2rem;
+    border-bottom: 1px solid var(--color-text-primary);
+    padding-bottom: 3rem;
+  }
+
+  .department-row:nth-child(even) {
+    flex-direction: column;
+    row-gap: 2rem;
+    border-bottom: 1px solid var(--color-text-primary);
+    padding-bottom: 3rem;
+  }
+
+  .department-row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .department-name {
+    font-size: 3rem;
+  }
 }

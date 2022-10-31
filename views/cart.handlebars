@@ -12,19 +12,18 @@
     <h1 class="cart-message">Your Cart</h1>
     <div class="cart-display">
       {{#each cartItems as |cartItem|}}
-        <div class="card">
+        <div class="card" id="cart-card">
           <img
             class="product-image"
-            src="{{product.image}}"
+            src="https://styles.redditmedia.com/t5_2qs68/styles/communityIcon_q8mi7wapykd51.jpg?width=256&s=854237e848eddbb31c24c6c0f530605e2f332451"
             alt="image of {{product.product_name}}"
           />
           <div class="product-info">
             <h2 class="product-name">{{product.product_name}}</h2>
             <p class="product-description">{{product.description}}</p>
-            <p class="product-price">{{product.price}}</p>
+            <p class="product-price">${{product.price}}</p>
           </div>
-          <button class="delete-from-cart" data-cartItemId="{{id}}">Remove from
-            Cart</button>
+          <button id="delete-from-cart" data-cartItemId="{{id}}">Remove</button>
         </div>
       {{/each}}
 

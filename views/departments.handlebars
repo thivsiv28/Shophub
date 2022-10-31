@@ -12,10 +12,20 @@
     <h1 class="departments-message">Shop By Departments</h1>
     <div class="departments-display">
       {{#each departments as |department|}}
-        <a
-          class="department-link"
-          href="/api/products/{{id}}"
-        >{{department_name}}</a>
+        <div class="department-row">
+          <h1 class="department-name">{{department_name}}</h1>
+          <div class="department-image">
+            <img
+              src="https://midwestcommunity.org/wp-content/uploads/2018/02/Groceries-ThinkstockPhotos-836782690.jpg"
+            />
+            <div class="department-image-hover">
+              <a
+                class="department-link"
+                href="/api/products/{{id}}"
+              >{{department_name}}</a>
+            </div>
+          </div>
+        </div>
       {{/each}}
 
     </div>

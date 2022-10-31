@@ -1,3 +1,19 @@
+// When added to cart, it will display a message briefly indicating that this product has been
+// added to cart.
+
+const displayAddedToCartMessage = (message_id) => {
+  const messages = document.querySelectorAll(".added-message");
+  for (let i = 0; i < messages.length; i++) {
+    if (messages[i].getAttribute("data-messageId") === message_id) {
+      messages[i].style.display = "block";
+      const timer = setInterval(function () {
+        messages[i].style.display = "none";
+        clearInterval(timer);
+      }, 2000);
+    }
+  }
+};
+
 const addToCart = async (event) => {
   if (event.target.hasAttribute("data-productId")) {
     const productId = event.target.getAttribute("data-productId");
@@ -11,6 +27,7 @@ const addToCart = async (event) => {
     if (!response.ok) {
       alert("Failed to add product to cart");
     }
+    displayAddedToCartMessage(productId);
   }
 };
 

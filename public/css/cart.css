@@ -30,3 +30,123 @@
   font-size: var(--font-size-medium);
   color: var(--color-text-primary);
 }
+
+.cart-display {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 4rem;
+  row-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart-card {
+  width: 20%;
+  box-shadow: 7px 7px 5px 5px #8888;
+  transition: all 0.1s linear;
+}
+
+#cart-card:hover {
+  box-shadow: -10px 10px 7px 7px #8888;
+  transform: translate(13px, -22px);
+}
+
+#delete-from-cart {
+  background: none;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-family: var(--font-style-primary);
+  font-size: var(--font-size-medium);
+  color: var(--color-text-primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#delete-from-cart:hover {
+  background: var(--color-text-primary);
+  color: aliceblue;
+}
+
+#submit-order-button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-family: var(--font-style-primary);
+  font-size: var(--font-size-medium);
+  color: var(--color-text-primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  animation: submit-button-animation 3s linear;
+  animation-iteration-count: infinite;
+}
+
+#submit-order-button:hover {
+  background: var(--color-text-primary);
+  color: aliceblue;
+}
+
+@keyframes submit-button-animation {
+  0% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  25% {
+    box-shadow: 0px 6px 6px 6px #8888;
+    transform: translateY(-10px);
+  }
+
+  50% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  75% {
+    box-shadow: 0px 6px 6px 6px #8888;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  #cart-card {
+    width: 40%;
+  }
+
+  #delete-from-cart {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .cart-items {
+    padding: 4rem 0;
+    row-gap: 4rem;
+  }
+
+  .cart-display {
+    padding-bottom: 2rem;
+  }
+
+  #cart-card {
+    width: 50%;
+  }
+
+  #delete-from-cart {
+    font-size: 2.5rem;
+  }
+
+  #submit-order-button {
+    font-size: 2.5rem;
+  }
+}
