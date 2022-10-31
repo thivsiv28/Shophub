@@ -26,7 +26,17 @@ Creating a website that houses various types of products that are â€œin-demandâ€
 
 ## Visualization
 
-Insert pics of the site in here, one of the main page, one of the departments page, one of the products page, one of the ccart page as well.
+-This is the Signup/Login Page
+![Sign up/login page](./public/images/loginscreenshot.JPG)
+
+-This is the Departments Page
+![Department page showing all the department groups](./public/images/departmentsscreenshot.png)
+
+-This is the Products Page
+![Products page showing all the related products for that department](./public/images/productsscreenshot.png)
+
+-This is the Cart Page
+![View cart page with all the products user added to cart](./public/images/cartscreenshot.png)
 
 ## Contributors and Github Profile Links
 
@@ -38,7 +48,16 @@ Insert pics of the site in here, one of the main page, one of the departments pa
 
 ## Technologies Used:
 
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://www.w3schools.com/css/)
+- [Javascript](https://www.javascript.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Sequelize](https://sequelize.org/)
+- [MySQL](https://www.mysql.com/)
 - [Semantic UI](https://semantic-ui.com/)
+- [Handlebars.js](https://handlebarsjs.com/)
+- [Bcrypt](https://www.npmjs.com/package/bcryptjs)
+- [Express](https://expressjs.com/)
 
 ## License
 
